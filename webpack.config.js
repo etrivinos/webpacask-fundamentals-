@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('shared.js');
+var extractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 	context: path.resolve('js'),
@@ -11,12 +12,15 @@ module.exports = {
 		contact: './contact_page.js',
 	},
 	output: {
-		path: path.resolve('build/js/'),
-		publicPath: '/public/assets/js/',
+		path: path.resolve('build/'),
+		publicPath: '/public/assets/',
 		filename: "[name].js"
 	},
 
-	plugins: [commonsPlugin],
+	plugins: [
+		commonsPlugin,
+		new extractTextPlugin('styles.css')
+	],
 
 	devServer: {
 		contentBase: 'public'
@@ -34,12 +38,12 @@ module.exports = {
 			{
 				test: /\.css$/,
 				exclude: /node_modules/,
-				loader: "style-loader!css-loader"
+				loader: extractTextPlugin.extract("style-loader", "css-loader")
 			},
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
-				loader: "style-loader!css-loader!sass-loader"
+				loader: extractTextPlugin.extract("style-loader", "css-loader!sass-loader")
 			},
 		]
 	},
