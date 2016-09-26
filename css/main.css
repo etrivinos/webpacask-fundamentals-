@@ -2,6 +2,25 @@
 	color: red;
 }
 
+@font-face {
+	font-family: 'Open Sans';
+
+	src: url('../fonts/OpenSans-Bold.ttf');
+	src: url('../fonts/OpenSans-BoldItalic.ttf');
+	src: url('../fonts/OpenSans-ExtraBold.ttf');
+	src: url('../fonts/OpenSans-ExtraBoldItalic.ttf');
+	src: url('../fonts/OpenSans-Italic.ttf');
+	src: url('../fonts/OpenSans-Light.ttf');
+	src: url('../fonts/OpenSans-LightItalic.ttf');
+	src: url('../fonts/OpenSans-Regular.ttf');
+	src: url('../fonts/OpenSans-Semibold.ttf');
+	src: url('../fonts/OpenSans-SemiboldItalic.ttf');
+}
+
+body {
+	font-family: 'Open Sans';
+}
+
 .bg_header_img {
 	background-image: url('../images/webpack_logo.jpg');
 	width: 100px;
