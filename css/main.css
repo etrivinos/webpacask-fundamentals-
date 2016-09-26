@@ -1,3 +1,10 @@
 * {
 	color: red;
 }
+
+.bg_header_img {
+	background-image: url('../images/webpack_logo.jpg');
+	width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+}

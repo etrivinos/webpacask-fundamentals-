@@ -45,6 +45,11 @@ module.exports = {
 				exclude: /node_modules/,
 				loader: extractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
 			},
+			{
+				test: /\.(png|jpg)$/,
+				exclude: /node_modules/,
+				loader: 'url-loader?limit=10'
+			},
 		]
 	},
 	resolve: {
