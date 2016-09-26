@@ -38,12 +38,12 @@ module.exports = {
 			{
 				test: /\.css$/,
 				exclude: /node_modules/,
-				loader: extractTextPlugin.extract("style-loader", "css-loader")
+				loader: extractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader")
 			},
 			{
 				test: /\.scss$/,
 				exclude: /node_modules/,
-				loader: extractTextPlugin.extract("style-loader", "css-loader!sass-loader")
+				loader: extractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader!sass-loader")
 			},
 		]
 	},
